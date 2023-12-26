@@ -19,7 +19,7 @@
         <h1 class="titulo">Titulo</h1>
         <a href="cerrar.php">Cerrar SEsion</a>
         <hr class="border">
-        <div>
+        <div class="contenido">
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem omnis, ipsa possimus, sint repudiandae veniam incidunt magnam corrupti voluptate accusantium laudantium quos, deserunt dolorum velit amet. Est ad porro eius harum, similique sit tempore dolores ipsam facere, accusamus, culpa minima obcaecati blanditiis tempora eaque officiis accusantium eveniet rerum ab dolor nihil! Voluptas quo error repellat dolore consectetur quisquam ducimus quasi tempore omnis accusamus. Sequi vero perspiciatis, eveniet quae sapiente dicta obcaecati, cupiditate placeat, eos praesentium ipsam! Provident eius itaque voluptas repellendus ducimus ab sequi corrupti commodi nihil fugiat quibusdam ex maiores beatae doloremque aut reiciendis suscipit dolor, at quis magnam.
         </p>
