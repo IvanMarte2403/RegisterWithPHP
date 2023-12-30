@@ -25,10 +25,39 @@
         $password = $_POST['password'];
         $password2= $_POST['password2'];
         
-        echo "$usuario . $password . $password2";
-        
-        // Queremos guardar en la base de datos en minusculas
+        // echo "$usuario . $password . $password2";
+
+        // Mas adelante vamos a comprobar si esta vacia o no
+        $errores = ''; 
+
+        if(empty($usuario) or empty($password) or empty($password2)){
+            $errores.='<li>Porfavor rellena los datos correctamente</li>';
+        }else{
+            // Comprobar que el usuario no exista ya
+            try{    //Hacer la conexion
+                $conexion = new PDO('mysql:host=localhost;dbname=formularioprácticaphp','root','');
+
+            }catch(PDOException $e){
+                echo "Error: " .$e->getMessage();
+            }
+            
+        //    Traime el usuario igual al que ingresemos, si hay uno que exista marca error  
+           $statement = $conexion -> prepare('SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1');
+        //    Cambiando el placeholder 
+           $statement ->execute(array(':usuario' => $usuario));
+
+        //    Va a recibir false o true 
+           $resultado = $statement->fetch();
+
+        //   print_r($resultado);
+        //   var_dump($resultado); //Imprime el valor falso en caso de que no hay otro usuario igual
+         
+          if($resultado != false){
+            $errores.='<li>El usuario ya existe </li>';
+          }
     }
+
+}
     
     require 'view/registro.view.php';
 

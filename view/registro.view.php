@@ -36,6 +36,16 @@
                 <!-- Se usa el placeholder para enviar la información directamente al name del Formulario -->
                 <i class="submit-btn fa-solid fa-arrow-right" onclick="login.submit()"></i>
             </div>
+
+            <!-- Mensaje de Error -->
+            <?php if(!empty($errores)): ?>
+                <div class="error">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
+            
         </form>   
         
         <p class="texto-registrate">
